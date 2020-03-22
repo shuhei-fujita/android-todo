@@ -1,19 +1,31 @@
 package com.syuheifujita.android_todo
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
-import com.syuheifujita.android_todo.databinding.ActivityMainBinding
+import androidx.recyclerview.widget.LinearLayoutManager
 import io.realm.Realm
+import io.realm.kotlin.where
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
     private lateinit var realm: Realm
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        setContentView(R.layout.activity_main)
         realm = Realm.getDefaultInstance()
+        recyclerview.layoutManager = LinearLayoutManager(this)
+        val todoModels = realm.where<TodoModel>().findAll()
+        val adapter = TodoAdapter(todoModels)
+        recyclerview.adapter = adapter
+
+        fab.setOnClickListener {
+            val intent = Intent(this, TodoEditActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onDestroy() {

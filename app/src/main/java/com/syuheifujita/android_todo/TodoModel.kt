@@ -7,7 +7,6 @@ import java.util.*
 open class TodoModel : RealmObject() {
     @PrimaryKey
     var id: Long = 0
-    var date: Date = Date()
     var title: String = ""
     var detail: String = ""
 }
