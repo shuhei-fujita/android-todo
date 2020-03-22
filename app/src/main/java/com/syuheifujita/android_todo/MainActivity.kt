@@ -3,14 +3,15 @@ package com.syuheifujita.android_todo
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.syuheifujita.android_todo.databinding.ActivityMainBinding
 import io.realm.Realm
 import io.realm.kotlin.where
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
     private lateinit var realm: Realm
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +25,11 @@ class MainActivity : AppCompatActivity() {
 
         fab.setOnClickListener {
             val intent = Intent(this, TodoEditActivity::class.java)
+            startActivity(intent)
+        }
+        adapter.setOnItemClickListener { id ->
+            val intent = Intent(this, TodoEditActivity::class.java)
+                .putExtra("schedule_id", id)
             startActivity(intent)
         }
     }

@@ -11,6 +11,11 @@ import io.realm.RealmRecyclerViewAdapter
 class TodoAdapter(data: OrderedRealmCollection<TodoModel>) :
     RealmRecyclerViewAdapter<TodoModel, TodoAdapter.ViewHolder>(data, true) {
 
+    private var listener: ((Long?) -> Unit)? = null
+    fun setOnItemClickListener(listener: (Long?) -> Unit) {
+        this.listener = listener
+    }
+
     init {
         setHasStableIds(true)
     }
@@ -22,6 +27,9 @@ class TodoAdapter(data: OrderedRealmCollection<TodoModel>) :
     override fun onBindViewHolder(holder: TodoAdapter.ViewHolder, position: Int) {
         val todoModel: TodoModel? = getItem(position)
         holder.title.text = todoModel?.title
+        holder.itemView.setOnClickListener {
+            listener?.invoke(todoModel?.id)
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
