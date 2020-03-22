@@ -4,8 +4,17 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+//realm実装
+apply plugin: 'kotlin-kapt'
+apply plugin: 'realm-android'
+
 android {
     compileSdkVersion 29
+    compileOptions {
+//        Realm実装
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.syuheifujita.android_todo"
@@ -36,4 +45,7 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     implementation 'com.google.android.material:material:1.1.0-alpha06'
+
+//    adapter
+    implementation 'io.realm:android-adapters:2.1.1'
 }
