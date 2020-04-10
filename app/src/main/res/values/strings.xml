@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">android-todo</string>
+    <string name="snackbar_add_messege">追加しました</string>
+    <string name="snackbar_back_button">戻る</string>
+    <string name="snackbar_modify_messege">修正しました</string>
+    <string name="snackbar_delete_button">削除</string>
+
+<!--    XML-->
+    <string name="text_title">タイトル</string>
+    <string name="edit_title">タイトルを入力</string>
+    <string name="text_detail">詳細</string>
+    <string name="button_save">保存</string>
+    <string name="button_delete">削除</string>
+    <string name="edit_detail">詳細を入力</string>
 </resources>

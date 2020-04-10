@@ -43,8 +43,8 @@ class TodoEditActivity : AppCompatActivity() {
                         todoModel.detail = edit_detail.text.toString()
                     }
 
-                    Snackbar.make(view, "追加しました", Snackbar.LENGTH_SHORT)
-                        .setAction("戻る") { finish() }
+                    Snackbar.make(view, R.string.snackbar_add_messege, Snackbar.LENGTH_SHORT)
+                        .setAction(R.string.snackbar_back_button) { finish() }
                         .setActionTextColor(Color.YELLOW)
                         .show()
                 }
@@ -56,8 +56,8 @@ class TodoEditActivity : AppCompatActivity() {
                         todo?.detail = edit_detail.text.toString()
 
                     }
-                    Snackbar.make(view, "修正しました", Snackbar.LENGTH_SHORT)
-                        .setAction("戻る") { finish() }
+                    Snackbar.make(view, R.string.snackbar_modify_messege, Snackbar.LENGTH_SHORT)
+                        .setAction(R.string.snackbar_back_button) { finish() }
                         .setActionTextColor(Color.YELLOW)
                         .show()
                 }
@@ -69,8 +69,8 @@ class TodoEditActivity : AppCompatActivity() {
                         ?.findFirst()
                         ?.deleteFromRealm()
                 }
-                Snackbar.make(view, "削除しました", Snackbar.LENGTH_SHORT)
-                    .setAction("戻る") { finish() }
+                Snackbar.make(view, R.string.snackbar_delete_button, Snackbar.LENGTH_SHORT)
+                    .setAction(R.string.snackbar_back_button) { finish() }
                     .setActionTextColor(Color.YELLOW)
                     .show()
             }

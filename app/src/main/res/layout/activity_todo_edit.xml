@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/text_title"
-        android:text="タイトル"
+        android:text="@string/text_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -17,7 +17,7 @@
 
     <EditText
         android:id="@+id/edit_title"
-        android:hint="タイトルを入力"
+        android:hint="@string/edit_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/text_title"
@@ -25,7 +25,7 @@
 
     <TextView
         android:id="@+id/text_detail"
-        android:text="詳細"
+        android:text="@string/text_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +33,7 @@
 
     <EditText
         android:id="@+id/edit_detail"
-        android:hint="詳細を入力"
+        android:hint="@string/edit_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/text_detail"
@@ -43,7 +43,7 @@
         android:id="@+id/button_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="save"
+        android:text="@string/button_save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -51,7 +51,7 @@
         android:id="@+id/button_delete"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="delete"
+        android:text="@string/button_delete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
