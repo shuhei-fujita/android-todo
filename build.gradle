@@ -17,6 +17,10 @@ buildscript {
         classpath "io.realm:realm-gradle-plugin:5.8.0"
     }
 
+//    ドロワー
+    ext {
+        navigationVersion = '1.0.0-rc02'
+    }
 }
 
 allprojects {

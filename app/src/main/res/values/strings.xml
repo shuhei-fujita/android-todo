@@ -5,11 +5,14 @@
     <string name="snackbar_modify_messege">修正しました</string>
     <string name="snackbar_delete_button">削除</string>
 
-<!--    XML-->
+    <!--    XML-->
     <string name="text_title">タイトル</string>
     <string name="edit_title">タイトルを入力</string>
     <string name="text_detail">詳細</string>
     <string name="button_save">保存</string>
     <string name="button_delete">削除</string>
     <string name="edit_detail">詳細を入力</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
