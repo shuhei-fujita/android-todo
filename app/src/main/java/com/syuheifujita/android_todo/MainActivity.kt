@@ -1,14 +1,13 @@
 package com.syuheifujita.android_todo
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.syuheifujita.android_todo.databinding.ActivityMainBinding
 import io.realm.Realm
 import io.realm.kotlin.where
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -24,10 +23,11 @@ class MainActivity : AppCompatActivity() {
         val adapter = TodoAdapter(todoModels)
         recyclerview.adapter = adapter
 
-        fab.setOnClickListener {
+        binding.fab.setOnClickListener {
             val intent = Intent(this, TodoEditActivity::class.java)
             startActivity(intent)
         }
+
         adapter.setOnItemClickListener { id ->
             val intent = Intent(this, TodoEditActivity::class.java)
                 .putExtra("schedule_id", id)
